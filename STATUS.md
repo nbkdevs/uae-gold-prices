@@ -32,7 +32,7 @@ Published on 3 Nov 2026 (about 15:22–15:31 PKT, UTC+5) with Nazzal's approval:
 | 23 | PyPI | `uae-gold-calculator` 1.0.0 | https://pypi.org/project/uae-gold-calculator/ | https://uaegoldprices.ae/ | project.urls Homepage + README Links | Nofollow (rel="nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
 | 24 | crates.io | `uae-gold-calculator` 1.0.0 | https://crates.io/crates/uae-gold-calculator | https://uaegoldprices.ae/ | sidebar homepage + README Links | Dofollow (sidebar homepage has no rel; README link is nofollow) | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
 | 25 | NuGet | `UaeGoldPrices.GoldCalculator` 1.0.0 | https://www.nuget.org/packages/UaeGoldPrices.GoldCalculator/ | https://uaegoldprices.ae/ | Project website + README Links | Nofollow (rel="noopener noreferrer nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
-| 26 | Smithery | Skill `skills/gold-value-calculator` | Not possible | https://uaegoldprices.ae/ | homepage + Reference anchor | Dofollow | No | — | Smithery shut down its accounts, API keys, CLI and SDKs on 31 Oct 2026; smithery.ai stays only as a public directory run by Arcade.dev. Source: https://smithery.ai/future |
+| — (was 26) | Smithery | Skill `skills/gold-value-calculator` | Removed: Smithery closed publishing 31 Oct 2026 (https://smithery.ai/future) | https://uaegoldprices.ae/ | homepage + Reference anchor | — | No | — | Row deleted from the tracking sheet on 3 Nov 2026 (Nazzal), so sheet rows 27+ shifted up by one. Smithery shut down its accounts, API keys, CLI and SDKs on 31 Oct 2026; smithery.ai stays only as a public directory run by Arcade.dev. Source: https://smithery.ai/future |
 | 27 | npm | `uae-gold-calculator` 1.0.0 | https://www.npmjs.com/package/uae-gold-calculator | https://uaegoldprices.ae/ | homepage + README Links | Nofollow (npm marks sidebar and README links nofollow) | 3 Nov 2026 | 3 Nov 2026 (Live) | Page is behind a Cloudflare check from the box; content confirmed via fetch and the registry API. Also has a 0.0.0-stage placeholder version |
 | 28 | RubyGems | `uae-gold-calculator` 1.0.0 | https://rubygems.org/gems/uae-gold-calculator | https://uaegoldprices.ae/ | homepage + README Links | Nofollow (rel="nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) | No 2FA OTP was needed |
 | 29 | ClawHub | Skill `gold-value-calculator` 1.0.0 (nbkdevs) | https://clawhub.ai/nbkdevs/gold-value-calculator | https://uaegoldprices.ae/ | SKILL.md Reference anchor | Dofollow (no rel) | 3 Nov 2026 | 3 Nov 2026 (Live) | Moderation CLEAN |
@@ -66,7 +66,7 @@ Not published yet; the sheet rows stay Pending until the ASIN is live.
 
 ## Blockers
 
-- Smithery (row 26): shut down on 31 Oct 2026, so there is nowhere to publish. Source: https://smithery.ai/future
+- Smithery (former row 26): Removed: Smithery closed publishing 31 Oct 2026 (https://smithery.ai/future). Row deleted from the sheet on 3 Nov 2026; sheet row numbers after 25 in this table are now one lower.
 - Packagist (row 22): no API token on the box. Needs Nazzal to submit the repo under vendor `uaegoldprices`.
 - npm.io (row 33): page loads but shows no site link yet.
 - Amazon Appstore, Google Play, AMO, Edge Partner Center, Chrome Web Store, Product Hunt, Indie Hackers, GitLab, Design Nominees and SourceForge all need Nazzal's accounts (not approved yet).
