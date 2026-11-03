@@ -53,6 +53,18 @@ Results are estimates. Shop prices, making charges and VAT treatment vary.
 - Privacy: [PRIVACY.md](PRIVACY.md) · https://uaegoldprices.ae/privacy-policy/
 - Contact: https://uaegoldprices.ae/contact-us/
 
+## Elsewhere
+
+- npm: https://www.npmjs.com/package/uae-gold-calculator
+- PyPI: https://pypi.org/project/uae-gold-calculator/
+- crates.io: https://crates.io/crates/uae-gold-calculator
+- pub.dev: https://pub.dev/packages/uae_gold_calculator
+- NuGet: https://www.nuget.org/packages/UaeGoldPrices.GoldCalculator/
+- RubyGems: https://rubygems.org/gems/uae-gold-calculator
+- Docker Hub: https://hub.docker.com/r/iamnazzal/uae-gold-calculator
+- Hugging Face Space: https://huggingface.co/spaces/iamnazzal/uae-gold-calculator
+- ClawHub skill: https://clawhub.ai/nbkdevs/gold-value-calculator
+
 ## License
 
 MIT © UAE Gold Prices

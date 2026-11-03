@@ -4,7 +4,7 @@ Tracking sheet: https://docs.google.com/spreadsheets/d/1OguqGbKt38PuFRcpFslDTSXj
 
 Anchor everywhere: **سعر الذهب اليوم في الامارات** → https://uaegoldprices.ae/
 
-Nothing has been published or submitted. Every row is **Pending** until the owner approves and the live URL is checked.
+Published on 3 Nov 2026 (about 15:22–15:31 PKT, UTC+5) with Nazzal's approval: npm, PyPI, crates.io, pub.dev, NuGet, RubyGems, Docker Hub, Hugging Face Space and ClawHub. Socket.dev picked up the npm package by itself. Link rel values below were read from the live pages (headless Chrome DOM). Everything else is **Pending**.
 
 | Sheet row | Platform | Asset | Live URL | Link target | Anchor / field | Dofollow | Submitted | Live date | Notes |
 |---|---|---|---|---|---|---|---|---|---|
@@ -27,19 +27,19 @@ Nothing has been published or submitted. Every row is **Pending** until the owne
 | 18 | Indie Hackers | Product page for the calculator | Pending | https://uaegoldprices.ae/ | website field + post | Nofollow | Pending | Pending | Not drafted beyond README/PH copy; needs IH account |
 | 19 | GitHub | https://github.com/nbkdevs/uae-gold-prices | Pending | https://uaegoldprices.ae/ | homepage + README Links "سعر الذهب اليوم في الامارات" | Nofollow | Pending | Pending | Repo pushed (only allowed publish step); counts as Pending until verified |
 | 20 | GitLab | Mirror of this repo | Pending | https://uaegoldprices.ae/ | project website + README | Nofollow | Pending | Pending | Needs GitLab account/approval to create project |
-| 21 | Docker Hub | `iamnazzal/uae-gold-calculator:1.0.0` (OCI built, not pushed) | Pending | https://uaegoldprices.ae/ | OCI url label + README Links | Dofollow | Pending | Pending | Needs iamnazzal Docker Hub login |
-| 22 | Packagist | `uaegoldprices/gold-calculator` (root composer.json) | Pending | https://uaegoldprices.ae/ | homepage + README Links | Nofollow | Pending | Pending | Submit GitHub URL on packagist.org (Nazzal account) |
-| 23 | PyPI | `uae-gold-calculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | project.urls Homepage + README Links | Nofollow | Pending | Pending | Needs PyPI token/account |
-| 24 | crates.io | `uae-gold-calculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | homepage + README Links | Dofollow | Pending | Pending | Needs crates.io token |
-| 25 | NuGet | `UaeGoldPrices.GoldCalculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | PackageProjectUrl + README Links | Nofollow | Pending | Pending | Needs NuGet API key |
-| 26 | Smithery | Skill `skills/gold-value-calculator` | Pending | https://uaegoldprices.ae/ | homepage + Reference anchor | Dofollow | Pending | Pending | BLOCKER: Smithery shut down 31 Oct 2026 — pick a replacement |
-| 27 | npm | `uae-gold-calculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | homepage + README Links | Nofollow | Pending | Pending | Needs npm token |
-| 28 | RubyGems | `uae-gold-calculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | homepage + README Links | Nofollow | Pending | Pending | Needs RubyGems API key |
-| 29 | ClawHub | Skill `gold-value-calculator` (nbkdevs) | Pending | https://uaegoldprices.ae/ | homepage + Reference anchor | Dofollow | Pending | Pending | Needs ClawHub login (nbkdevs) |
-| 30 | Hugging Face Space | `iamnazzal/uae-gold-calculator` static, Arabic RTL | Pending | https://uaegoldprices.ae/ | README Links + footer anchor | Dofollow | Pending | Pending | Needs HF iamnazzal login |
-| 31 | pub.dev | `uae_gold_calculator` 1.0.0 | Pending | https://uaegoldprices.ae/ | homepage + README Links | Nofollow | Pending | Pending | Needs Google account for pub.dev; dry run 0 warnings |
-| 32 | Socket.dev | npm package page (auto-indexed after npm publish) | Pending | https://uaegoldprices.ae/ | from npm metadata | Nofollow | Pending | Pending | Follows npm publish; nothing to submit |
-| 33 | npm.io | npm package page (auto-indexed after npm publish) | Pending | https://uaegoldprices.ae/ | from npm metadata | Dofollow | Pending | Pending | Follows npm publish; nothing to submit |
+| 21 | Docker Hub | `iamnazzal/uae-gold-calculator:1.0.0` + `latest` (linux/amd64 + linux/arm64) | https://hub.docker.com/r/iamnazzal/uae-gold-calculator | https://uaegoldprices.ae/ | Hub overview Links + OCI url label | Dofollow (rel="noopener noreferrer") | 3 Nov 2026 | 3 Nov 2026 (Live) | Index digest sha256:e8e0181e0b4c26477532831b2bc58e1379cf5ac4cd950a9b8753212e7a7f43a9 |
+| 22 | Packagist | `uaegoldprices/gold-calculator` (root composer.json) | Pending | https://uaegoldprices.ae/ | homepage + README Links | Nofollow | Skipped | Pending | No Packagist API token on the box (composer auth.json is empty, no env var). Submit https://github.com/nbkdevs/uae-gold-prices at https://packagist.org/packages/submit, vendor uaegoldprices |
+| 23 | PyPI | `uae-gold-calculator` 1.0.0 | https://pypi.org/project/uae-gold-calculator/ | https://uaegoldprices.ae/ | project.urls Homepage + README Links | Nofollow (rel="nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
+| 24 | crates.io | `uae-gold-calculator` 1.0.0 | https://crates.io/crates/uae-gold-calculator | https://uaegoldprices.ae/ | sidebar homepage + README Links | Dofollow (sidebar homepage has no rel; README link is nofollow) | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
+| 25 | NuGet | `UaeGoldPrices.GoldCalculator` 1.0.0 | https://www.nuget.org/packages/UaeGoldPrices.GoldCalculator/ | https://uaegoldprices.ae/ | Project website + README Links | Nofollow (rel="noopener noreferrer nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
+| 26 | Smithery | Skill `skills/gold-value-calculator` | Not possible | https://uaegoldprices.ae/ | homepage + Reference anchor | Dofollow | No | — | Smithery shut down its accounts, API keys, CLI and SDKs on 31 Oct 2026; smithery.ai stays only as a public directory run by Arcade.dev. Source: https://smithery.ai/future |
+| 27 | npm | `uae-gold-calculator` 1.0.0 | https://www.npmjs.com/package/uae-gold-calculator | https://uaegoldprices.ae/ | homepage + README Links | Nofollow (npm marks sidebar and README links nofollow) | 3 Nov 2026 | 3 Nov 2026 (Live) | Page is behind a Cloudflare check from the box; content confirmed via fetch and the registry API. Also has a 0.0.0-stage placeholder version |
+| 28 | RubyGems | `uae-gold-calculator` 1.0.0 | https://rubygems.org/gems/uae-gold-calculator | https://uaegoldprices.ae/ | homepage + README Links | Nofollow (rel="nofollow") | 3 Nov 2026 | 3 Nov 2026 (Live) | No 2FA OTP was needed |
+| 29 | ClawHub | Skill `gold-value-calculator` 1.0.0 (nbkdevs) | https://clawhub.ai/nbkdevs/gold-value-calculator | https://uaegoldprices.ae/ | SKILL.md Reference anchor | Dofollow (no rel) | 3 Nov 2026 | 3 Nov 2026 (Live) | Moderation CLEAN |
+| 30 | Hugging Face Space | `iamnazzal/uae-gold-calculator` static, Arabic RTL | https://huggingface.co/spaces/iamnazzal/uae-gold-calculator | https://uaegoldprices.ae/ | app footer anchor + README Links | Dofollow in the app (iamnazzal-uae-gold-calculator.static.hf.space, no rel); README tab is nofollow | 3 Nov 2026 | 3 Nov 2026 (Live) | Commit 7a1157c, RUNNING |
+| 31 | pub.dev | `uae_gold_calculator` 1.0.0 | https://pub.dev/packages/uae_gold_calculator | https://uaegoldprices.ae/ | homepage + README Links | Nofollow (rel="ugc") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
+| 32 | Socket.dev | npm package page (auto-indexed) | https://socket.dev/npm/package/uae-gold-calculator | https://uaegoldprices.ae/ | from npm metadata | Nofollow (rel="nofollow ugc noopener noreferrer") | 3 Nov 2026 | 3 Nov 2026 (Live) |  |
+| 33 | npm.io | npm package page (auto-indexed) | https://npm.io/package/uae-gold-calculator (loads, no site link yet) | https://uaegoldprices.ae/ | from npm metadata | Dofollow | Auto | Pending | Page shows no link to the site on 3 Nov 2026; recheck later |
 | — | Google Play | Same app `releases/uae-gold-calculator-1.0.0.aab` | Pending | https://uaegoldprices.ae/ | About + description | — | Pending | Pending | Not in sheet; optional |
 | — | Context7 | `packages/context7/llms.txt` | Pending | https://uaegoldprices.ae/ | llms.txt links | — | Pending | Pending | Plan: host llms.txt at site root or submit GitHub repo; not in sheet |
 | — | SourceForge | `packages/sourceforge/PROJECT.md` | Pending | https://uaegoldprices.ae/ | project homepage | — | Pending | Pending | Plan only; not in sheet; needs account |
@@ -66,8 +66,8 @@ Not published yet; the sheet rows stay Pending until the ASIN is live.
 
 ## Blockers
 
-- Smithery shut down on 31 Oct 2026, so sheet row 26 can't be done there.
-- Docker Hub and HF need the `iamnazzal` logins; ClawHub needs `nbkdevs`.
-- Registries need tokens: npm, PyPI, crates.io, NuGet, RubyGems. pub.dev needs a Google login. Packagist needs an account.
-- Amazon Appstore, Google Play, AMO, Edge Partner Center, Chrome Web Store, Product Hunt, Indie Hackers, GitLab, Design Nominees and SourceForge all need Nazzal's accounts.
+- Smithery (row 26): shut down on 31 Oct 2026, so there is nowhere to publish. Source: https://smithery.ai/future
+- Packagist (row 22): no API token on the box. Needs Nazzal to submit the repo under vendor `uaegoldprices`.
+- npm.io (row 33): page loads but shows no site link yet.
+- Amazon Appstore, Google Play, AMO, Edge Partner Center, Chrome Web Store, Product Hunt, Indie Hackers, GitLab, Design Nominees and SourceForge all need Nazzal's accounts (not approved yet).
 - Context7: `llms.txt` should be uploaded to the site root (https://uaegoldprices.ae/llms.txt).
