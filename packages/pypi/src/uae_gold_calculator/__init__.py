@@ -17,7 +17,9 @@ __all__ = [
 ]
 
 KARATS = (24, 22, 21, 18, 14)
-HALLMARKS = {24: 999, 22: 916, 21: 875, 18: 750, 14: 585}
+# Fineness per mille used by UAE gold price boards (and uaegoldprices.ae).
+# A karat's price = 24K price x fineness / 999; other karats fall back to karat / 24.
+HALLMARKS = {24: 999, 22: 914, 21: 874, 18: 749, 16: 666, 14: 583}
 UNITS = {"g": 1.0, "kg": 1000.0, "oz": 31.1034768, "tola": 11.6638038, "mithqal": 4.25}
 _ALIASES = {
     "gram": "g", "grams": "g", "gr": "g", "جرام": "g", "غرام": "g",
@@ -84,7 +86,10 @@ def purity(karat: float) -> float:
     k = float(karat)
     if not (0 < k <= 24):
         raise ValueError("karat must be between 0 and 24")
-    return k / 24
+    if k == 24:
+        return 1.0
+    f = HALLMARKS.get(int(k)) if k.is_integer() else None
+    return k / 24 if f is None else f / 999
 
 
 def convert(value, from_unit: str, to_unit: str) -> float:

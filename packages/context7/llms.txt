@@ -14,7 +14,7 @@ Gold prices in the UAE follow the international spot price converted at the fixe
 
 ## Calculations
 
-- Karat price per gram = 24K price × karat ÷ 24 (hallmarks 999 / 916 / 875 / 750 / 585)
+- Karat price per gram = 24K price × fineness ÷ 999, with the fineness UAE price boards use: 24K 999, 22K 914, 21K 874, 18K 749, 16K 666, 14K 583 (other karats: karat ÷ 24)
 - 1 troy ounce = 31.1034768 g; 1 tola = 11.6638038 g; 1 mithqal = 4.25 g
 - Jewellery price = grams × karat price + making charge, then 5% VAT on both
 - Zakat on gold: due when pure gold ≥ 85 g; 2.5% of its value

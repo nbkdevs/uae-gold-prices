@@ -7,8 +7,9 @@ library;
 /// Karats in the default table.
 const List<int> karats = [24, 22, 21, 18, 14];
 
-/// Hallmarks (fineness per mille) for display.
-const Map<int, int> hallmarks = {24: 999, 22: 916, 21: 875, 18: 750, 14: 585};
+/// Fineness per mille used by UAE gold price boards (and uaegoldprices.ae).
+/// A karat's price = 24K price x fineness / 999; other karats use karat / 24.
+const Map<int, int> hallmarks = {24: 999, 22: 914, 21: 874, 18: 749, 16: 666, 14: 583};
 
 /// Grams in one unit.
 const Map<String, double> units = {
@@ -107,12 +108,14 @@ double _check(String name, double v, {bool allowZero = false}) {
   return v;
 }
 
-/// Purity = karat / 24.
+/// Price ratio to 24K: fineness / 999 for the board karats, otherwise karat / 24.
 double purity(num karat) {
   if (!(karat > 0 && karat <= 24)) {
     throw ArgumentError('karat must be between 0 and 24');
   }
-  return karat / 24;
+  if (karat == 24) return 1.0;
+  final f = karat == karat.roundToDouble() ? hallmarks[karat.toInt()] : null;
+  return f == null ? karat / 24 : f / 999;
 }
 
 /// Convert a weight between units. Not rounded.

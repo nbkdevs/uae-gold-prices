@@ -55,7 +55,7 @@ A small, private calculator for anyone who buys, sells or owns gold jewellery.
 
 Type today's 24K price once (per gram or per troy ounce) and the popup works out the rest:
 
-- Karat table: 24K, 22K, 21K, 18K and 14K prices per gram, per tola and per ounce, with hallmarks (999, 916, 875, 750, 585).
+- Karat table: 24K, 22K, 21K, 18K and 14K prices per gram, per tola and per ounce, with hallmarks (999, 914, 874, 749, 583).
 - Item price: weight, karat and making charge (per gram, a percentage of the gold value, or a fixed amount), plus optional 5% VAT, with a line-by-line breakdown.
 - Zakat on gold: add several pieces of different karats; it converts them to pure gold, compares the total with the 85 g nisab and shows the 2.5% due.
 - Unit converter: gram, kilogram, troy ounce, tola and mithqal, with the value at your price.
@@ -77,7 +77,7 @@ Results are estimates. Shop prices, making charges and VAT treatment vary; check
 
 أدخل سعر عيار 24 اليوم مرة واحدة (للجرام أو للأونصة) وتتولى الإضافة الباقي:
 
-- جدول العيارات: أسعار 24 و22 و21 و18 و14 للجرام والتولة والأونصة مع الدمغة (999، 916، 875، 750، 585).
+- جدول العيارات: أسعار 24 و22 و21 و18 و14 للجرام والتولة والأونصة مع الدمغة (999، 914، 874، 749، 583).
 - سعر القطعة: الوزن والعيار والمصنعية (للجرام أو نسبة من قيمة الذهب أو مبلغ ثابت) مع ضريبة القيمة المضافة 5% اختياريًا، وتفصيل كل بند.
 - زكاة الذهب: أضف عدة قطع بعيارات مختلفة، فتحوّلها إلى ذهب خالص وتقارنه بنصاب 85 جرامًا وتحسب 2.5% المستحقة.
 - محوّل الوحدات: الجرام والكيلوجرام والأونصة والتولة والمثقال، مع القيمة بسعرك.
@@ -101,7 +101,7 @@ AR: لا تطلب الإضافة أي أذونات. لا توجد أذونات �
 - Sold or transferred to third parties: **No**.
 
 ### Notes for reviewers
-See `edge/NOTES_FOR_CERTIFICATION.md` (test steps: price 461.11, 10 g 21K, making 30/g, VAT on → 4,551.45).
+See `edge/NOTES_FOR_CERTIFICATION.md` (test steps: price 461.11, 10 g 21K, making 30/g, VAT on → 4,550.84).
 
 ---
 

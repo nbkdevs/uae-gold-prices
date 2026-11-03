@@ -13,7 +13,8 @@ final class Gold
 {
     public const VERSION = '1.0.0';
     public const KARATS = [24, 22, 21, 18, 14];
-    public const HALLMARKS = [24 => 999, 22 => 916, 21 => 875, 18 => 750, 14 => 585];
+    /** Fineness per mille used by UAE gold price boards (and uaegoldprices.ae); price = 24K x fineness / 999. */
+    public const HALLMARKS = [24 => 999, 22 => 914, 21 => 874, 18 => 749, 16 => 666, 14 => 583];
     public const UNITS = ['g' => 1.0, 'kg' => 1000.0, 'oz' => 31.1034768, 'tola' => 11.6638038, 'mithqal' => 4.25];
     public const ALIASES = [
         'gram' => 'g', 'grams' => 'g', 'gr' => 'g', 'جرام' => 'g', 'غرام' => 'g',
@@ -72,6 +73,13 @@ final class Gold
     {
         if (!($karat > 0 && $karat <= 24)) {
             throw new \InvalidArgumentException('karat must be between 0 and 24');
+        }
+        if ($karat == 24) {
+            return 1.0;
+        }
+        $k = (int) $karat;
+        if ($k == $karat && isset(self::HALLMARKS[$k])) {
+            return self::HALLMARKS[$k] / 999;
         }
         return $karat / 24;
     }

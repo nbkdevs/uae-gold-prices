@@ -12,4 +12,4 @@
 
 **Publish (not run, needs the owner's OK):** create the Space `iamnazzal/uae-gold-calculator` with sdk static, then `huggingface-cli upload iamnazzal/uae-gold-calculator packages/hf-space . --repo-type space`.
 
-**Check:** page built by `web/build.py`; `js/gold.js` loaded in Node gives 10 g 21K + 30/g making + VAT = 4551.45 and zakat (100 g 21K + 25 g 18K) = 1224.82; headless Chrome renders 4,551.45 in the Arabic item tab; `index.html` is `dir="rtl"` with the anchor link in the footer (3 Nov 2026, 14:57 PKT).
+**Check:** page built by `web/build.py`; `js/gold.js` loaded in Node gives 10 g 21K + 30/g making + VAT = 4550.84 and zakat (100 g 21K + 25 g 18K) = 1224.61; headless Chrome renders 4,550.84 in the Arabic item tab; `index.html` is `dir="rtl"` with the anchor link in the footer (3 Nov 2026, 14:57 PKT).

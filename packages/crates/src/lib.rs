@@ -5,7 +5,7 @@
 //! ```
 //! use uae_gold_calculator::{item_price, MakingType};
 //! let r = item_price(461.11, 10.0, "g", 21.0, 30.0, MakingType::PerGram, 0.05).unwrap();
-//! assert_eq!(r.total, 4551.45);
+//! assert_eq!(r.total, 4550.84);
 //! ```
 
 /// Karats in the default table.
@@ -46,18 +46,26 @@ pub fn unit_grams(unit: &str) -> R<f64> {
     }
 }
 
-/// Hallmark (fineness per mille) for display.
-pub fn hallmark(karat: f64) -> u32 {
+/// Fineness per mille used by UAE gold price boards (and uaegoldprices.ae):
+/// 24K 999, 22K 914, 21K 874, 18K 749, 16K 666, 14K 583.
+pub fn fineness(karat: f64) -> Option<u32> {
+    if karat.fract() != 0.0 { return None; }
     match karat as u32 {
-        24 => 999, 22 => 916, 21 => 875, 18 => 750, 14 => 585,
-        _ => (karat / 24.0 * 1000.0).round() as u32,
+        24 => Some(999), 22 => Some(914), 21 => Some(874), 18 => Some(749), 16 => Some(666), 14 => Some(583),
+        _ => None,
     }
 }
 
-/// Purity = karat / 24.
+/// Hallmark (fineness per mille) for display.
+pub fn hallmark(karat: f64) -> u32 {
+    fineness(karat).unwrap_or_else(|| (karat / 24.0 * 1000.0).round() as u32)
+}
+
+/// Price ratio to 24K: fineness / 999 for the board karats, otherwise karat / 24.
 pub fn purity(karat: f64) -> R<f64> {
     if !(karat > 0.0 && karat <= 24.0) { return err("karat must be between 0 and 24"); }
-    Ok(karat / 24.0)
+    if karat == 24.0 { return Ok(1.0); }
+    Ok(match fineness(karat) { Some(f) => f as f64 / 999.0, None => karat / 24.0 })
 }
 
 fn positive(name: &str, v: f64, allow_zero: bool) -> R<f64> {
@@ -162,7 +170,7 @@ mod tests {
     fn table() {
         let t = price_table(461.11).unwrap();
         let g: Vec<f64> = t.iter().map(|r| r.per_gram).collect();
-        assert_eq!(g, vec![461.11, 422.68, 403.47, 345.83, 268.98]);
+        assert_eq!(g, vec![461.11, 421.88, 403.41, 345.72, 269.10]);
         assert_eq!(t[0].per_ounce, 14342.12);
     }
     #[test]
@@ -174,15 +182,15 @@ mod tests {
     #[test]
     fn items() {
         let r = item_price(461.11, 10.0, "g", 21.0, 30.0, MakingType::PerGram, 0.05).unwrap();
-        assert_eq!((r.metal, r.making, r.vat, r.total), (4034.71, 300.0, 216.74, 4551.45));
+        assert_eq!((r.metal, r.making, r.vat, r.total), (4034.14, 300.0, 216.71, 4550.84));
         assert_eq!(item_price(400.0, 1.0, "oz", 24.0, 0.0, MakingType::PerGram, 0.0).unwrap().total, 12441.39);
-        assert_eq!(item_price(400.0, 5.0, "g", 18.0, 10.0, MakingType::Percent, 0.0).unwrap().total, 1650.0);
-        assert_eq!(item_price(400.0, 5.0, "g", 18.0, 99.0, MakingType::Fixed, 0.0).unwrap().total, 1599.0);
+        assert_eq!(item_price(400.0, 5.0, "g", 18.0, 10.0, MakingType::Percent, 0.0).unwrap().total, 1649.45);
+        assert_eq!(item_price(400.0, 5.0, "g", 18.0, 99.0, MakingType::Fixed, 0.0).unwrap().total, 1598.5);
     }
     #[test]
     fn zakat_nisab() {
         let z = zakat(461.11, &[(100.0, "g", 21.0)]).unwrap();
-        assert!(z.due); assert_eq!(z.pure_grams, 87.5); assert_eq!(z.zakat, 1008.68);
+        assert!(z.due); assert_eq!(z.pure_grams, 87.4875); assert_eq!(z.zakat, 1008.53);
         let n = zakat(461.11, &[(90.0, "g", 18.0)]).unwrap();
         assert!(!n.due); assert_eq!(n.zakat, 0.0);
     }
@@ -192,5 +200,12 @@ mod tests {
         assert_eq!(parse_number("461,11").unwrap(), 461.11);
         assert_eq!(parse_number("14,342.21").unwrap(), 14342.21);
         assert!(karat_price(-1.0, 22.0).is_err());
+    }
+    #[test]
+    fn board_fineness() {
+        let g: Vec<f64> = price_table(461.74).unwrap().iter().map(|r| r.per_gram).collect();
+        assert_eq!(g, vec![461.74, 422.45, 403.96, 346.19, 269.46]);
+        assert_eq!(purity(16.0).unwrap(), 666.0 / 999.0);
+        assert_eq!(purity(9.0).unwrap(), 9.0 / 24.0);
     }
 }

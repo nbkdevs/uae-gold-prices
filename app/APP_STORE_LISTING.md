@@ -16,7 +16,7 @@ App stores may carry the brand name; browser stores may not. Written 3 Nov 2026 
 أدخل سعر الذهب عيار 24 اليوم مرة واحدة (للجرام أو للأونصة) ويحسب التطبيق الباقي:
 
 جدول العيارات
-أسعار عيار 24 و22 و21 و18 و14 للجرام والتولة والأونصة مع الدمغة (999، 916، 875، 750، 585).
+أسعار عيار 24 و22 و21 و18 و14 للجرام والتولة والأونصة مع الدمغة (999، 914، 874، 749، 583).
 
 سعر قطعة المجوهرات
 الوزن والعيار والمصنعية (درهم لكل جرام، أو نسبة من قيمة الذهب، أو مبلغ ثابت) مع ضريبة القيمة المضافة 5% اختياريًا، وتفصيل واضح لقيمة الذهب والمصنعية والضريبة والإجمالي.
@@ -55,7 +55,7 @@ The gold calculator from UAE Gold Prices tells you what your gold is worth, in A
 Type today's 24K price once (per gram or per troy ounce) and the app does the rest:
 
 Karat table
-24K, 22K, 21K, 18K and 14K prices per gram, tola and ounce, with hallmarks (999, 916, 875, 750, 585).
+24K, 22K, 21K, 18K and 14K prices per gram, tola and ounce, with hallmarks (999, 914, 874, 749, 583).
 
 Jewellery price
 Weight, karat and making charge (AED per gram, a percentage of the gold value, or a fixed amount) plus optional 5% VAT, with a clear breakdown of gold value, making, VAT and total.

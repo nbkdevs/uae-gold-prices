@@ -6,7 +6,9 @@
 module UaeGoldCalculator
   VERSION = "1.0.0"
   KARATS = [24, 22, 21, 18, 14].freeze
-  HALLMARKS = { 24 => 999, 22 => 916, 21 => 875, 18 => 750, 14 => 585 }.freeze
+  # Fineness per mille used by UAE gold price boards (and uaegoldprices.ae).
+  # A karat's price = 24K price x fineness / 999; other karats use karat / 24.
+  HALLMARKS = { 24 => 999, 22 => 914, 21 => 874, 18 => 749, 16 => 666, 14 => 583 }.freeze
   UNITS = { "g" => 1.0, "kg" => 1000.0, "oz" => 31.1034768, "tola" => 11.6638038, "mithqal" => 4.25 }.freeze
   ALIASES = {
     "gram" => "g", "grams" => "g", "gr" => "g", "جرام" => "g", "غرام" => "g",
@@ -57,8 +59,10 @@ module UaeGoldCalculator
   def purity(karat)
     k = karat.to_f
     raise ArgumentError, "karat must be between 0 and 24" unless k.positive? && k <= 24
+    return 1.0 if k == 24
 
-    k / 24
+    f = k == k.floor ? HALLMARKS[k.to_i] : nil
+    f ? f / 999.0 : k / 24
   end
 
   def convert(value, from, to)

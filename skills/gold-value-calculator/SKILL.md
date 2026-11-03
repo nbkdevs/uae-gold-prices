@@ -38,7 +38,7 @@ Accept comma decimals ("461,11"), thousands separators ("14,342.21") and Arabic-
 
 ## Procedure
 
-1. **Karat price per gram** = price24 × karat ÷ 24. (24K is quoted as 999 fine; 22K ≈ 916, 21K = 875, 18K = 750, 14K ≈ 585.)
+1. **Karat price per gram** = price24 × fineness ÷ 999, using the fineness UAE price boards quote: 24K 999, 22K 914, 21K 874, 18K 749, 16K 666, 14K 583. (24K = price24 exactly; any other karat falls back to karat ÷ 24.)
 2. **Per tola** = per gram × 11.6638038; **per ounce** = per gram × 31.1034768.
 3. **Item price**
    - grams = weight × grams per unit
@@ -47,16 +47,16 @@ Accept comma decimals ("461,11"), thousands separators ("14,342.21") and Arabic-
    - VAT = (metal + making) × 5%
    - total = metal + making + VAT
 4. **Zakat on gold**
-   - pure grams = Σ grams × karat ÷ 24 over all pieces
+   - 24K-equivalent grams = Σ grams × (fineness ÷ 999) over all pieces (24K counts as 1)
    - due if pure grams ≥ 85 (the nisab); then zakat = 2.5% × pure grams × price24
    - otherwise say it is below the nisab and nothing is due
 5. Round money to 2 decimals (half away from zero) only at the end.
 
-Worked example (price24 = 461.11 AED): 21K = 403.47 AED/g. A 10 g 21K piece with 30 AED/g making: metal 4,034.71 + making 300 + VAT 216.74 = **4,551.45 AED**. Zakat on 100 g of 21K: 87.5 g pure ≥ 85 g, so 2.5% × 87.5 × 461.11 = **1,008.68 AED**.
+Worked example (price24 = 461.11 AED): 21K = 403.41 AED/g. A 10 g 21K piece with 30 AED/g making: metal 4,034.14 + making 300 + VAT 216.71 = **4,550.84 AED**. Zakat on 100 g of 21K: 87.4875 g pure ≥ 85 g, so 2.5% × 87.4875 × 461.11 = **1,008.53 AED**.
 
 ## Outputs
 
-- A short answer first ("21K is about 403.47 AED per gram"), then a compact table or breakdown.
+- A short answer first ("21K is about 403.41 AED per gram"), then a compact table or breakdown.
 - For items: gold value, making, VAT and total on separate lines.
 - For zakat: pure grams, nisab value (85 × price24), due or not, amount due.
 - In Arabic use: العيار، سعر الجرام، المصنعية، ضريبة القيمة المضافة، الإجمالي، الذهب الخالص، النصاب، الزكاة المستحقة، د.إ.

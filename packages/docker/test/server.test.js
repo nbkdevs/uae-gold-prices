@@ -14,14 +14,14 @@ test('api', async () => {
   const s = http.createServer(handle).listen(0);
   try {
     const t = JSON.parse((await get(s, '/api/table?price=461.11')).body);
-    assert.deepStrictEqual(t.map((r) => r.perGram), [461.11, 422.68, 403.47, 345.83, 268.98]);
+    assert.deepStrictEqual(t.map((r) => r.perGram), [461.11, 421.88, 403.41, 345.72, 269.10]);
     const it = JSON.parse((await get(s, '/api/item?price=461.11&weight=10&karat=21&making=30')).body);
-    assert.strictEqual(it.total, 4551.45);
+    assert.strictEqual(it.total, 4550.84);
     const p = JSON.parse((await get(s, '/api/item?price=400&weight=5&karat=18&making=10&making_type=percent&vat=0')).body);
-    assert.strictEqual(p.total, 1650);
+    assert.strictEqual(p.total, 1649.45);
     assert.strictEqual(JSON.parse((await get(s, '/api/convert?value=1&from=oz&to=g')).body).value, 31.1035);
     const z = JSON.parse((await get(s, '/api/zakat?price=461.11&items=100:21')).body);
-    assert.strictEqual(z.zakat, 1008.68);
+    assert.strictEqual(z.zakat, 1008.53);
     assert.strictEqual(JSON.parse((await get(s, '/api/zakat?price=461.11&weight=90&karat=18')).body).due, false);
     assert.strictEqual((await get(s, '/api/item?price=-1&weight=1')).code, 400);
     assert.strictEqual((await get(s, '/api/table')).code, 400);

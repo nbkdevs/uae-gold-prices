@@ -31,7 +31,7 @@ public static class Gold
 {
     public static readonly int[] Karats = { 24, 22, 21, 18, 14 };
     public static readonly IReadOnlyDictionary<int, int> Hallmarks =
-        new Dictionary<int, int> { [24] = 999, [22] = 916, [21] = 875, [18] = 750, [14] = 585 };
+        new Dictionary<int, int> { [24] = 999, [22] = 914, [21] = 874, [18] = 749, [16] = 666, [14] = 583 };
     public static readonly IReadOnlyDictionary<string, double> Units = new Dictionary<string, double>
     { ["g"] = 1, ["kg"] = 1000, ["oz"] = 31.1034768, ["tola"] = 11.6638038, ["mithqal"] = 4.25 };
     private static readonly Dictionary<string, string> Aliases = new()
@@ -90,6 +90,9 @@ public static class Gold
     public static double Purity(double karat)
     {
         if (!(karat > 0 && karat <= 24)) throw new ArgumentOutOfRangeException(nameof(karat), "karat must be between 0 and 24");
+        if (karat == 24) return 1.0;
+        // UAE board fineness (24K 999, 22K 914, 21K 874, 18K 749, 16K 666, 14K 583): price = 24K x fineness / 999.
+        if (karat == Math.Floor(karat) && Hallmarks.TryGetValue((int)karat, out var f)) return f / 999.0;
         return karat / 24;
     }
 

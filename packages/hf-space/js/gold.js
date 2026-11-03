@@ -10,11 +10,15 @@
  * charges and VAT, and checks zakat against the 85 g nisab.
  */
 
-/** Karats supported out of the box. Purity = karat / 24. */
+/** Karats shown in the price table. */
 const KARATS = Object.freeze([24, 22, 21, 18, 14]);
 
-/** Common hallmarks (fineness per mille) for display. */
-const HALLMARKS = Object.freeze({ 24: 999, 22: 916, 21: 875, 18: 750, 14: 585 });
+/**
+ * Fineness per mille used by UAE gold price boards:
+ * 24K 999, 22K 914, 21K 874, 18K 750 -> 749, 16K 666, 14K 583.
+ * A karat's price = 24K price x fineness / 999. Other karats fall back to karat / 24.
+ */
+const HALLMARKS = Object.freeze({ 24: 999, 22: 914, 21: 874, 18: 749, 16: 666, 14: 583 });
 
 /** Grams in one unit. */
 const UNITS = Object.freeze({
@@ -76,7 +80,9 @@ function checkPositive(name, v, allowZero = false) {
 function purity(karat) {
   const k = Number(karat);
   if (!Number.isFinite(k) || k <= 0 || k > 24) throw new RangeError('karat must be between 0 and 24');
-  return k / 24;
+  if (k === 24) return 1;
+  const f = HALLMARKS[k];
+  return f === undefined ? k / 24 : f / 999;
 }
 
 /** Convert a weight between units (g, kg, oz, tola, mithqal). Not rounded. */
@@ -155,7 +161,7 @@ function itemPrice(o) {
 }
 
 /**
- * Zakat on gold. `items` = [{weight, unit?, karat?}]. Pure-gold equivalent is
+ * Zakat on gold. `items` = [{weight, unit?, karat?}]. The 24K-equivalent weight is
  * compared with the 85 g nisab; zakat is 2.5% of the value when due.
  */
 function zakat(price24, items, nisabGrams = NISAB_GRAMS) {

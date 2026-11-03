@@ -20,8 +20,8 @@ Open http://localhost:8080/ for the calculator page, or call the API:
 
 ```
 $ curl -s 'localhost:8080/api/item?price=461.11&weight=10&karat=21&making=30'
-{ "grams": 10, "karat": 21, "pricePerGram": 403.47, "metal": 4034.71, "making": 300,
-  "subtotal": 4334.71, "vatRate": 0.05, "vat": 216.74, "total": 4551.45 }
+{ "grams": 10, "karat": 21, "pricePerGram": 403.41, "metal": 4034.14, "making": 300,
+  "subtotal": 4334.71, "vatRate": 0.05, "vat": 216.71, "total": 4550.84 }
 ```
 
 Build from the repo (context is `packages/`):

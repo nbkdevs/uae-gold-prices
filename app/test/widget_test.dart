@@ -20,13 +20,13 @@ void main() {
     await tester.enterText(find.byKey(const Key('priceField')), '461.11');
     await tester.pump();
     expect(find.byKey(const Key('k21g')), findsOneWidget);
-    expect(find.text('403.47'), findsWidgets);
+    expect(find.text('403.41'), findsWidgets);
 
     await tester.tap(find.text('سعر القطعة'));
     await tester.pumpAndSettle();
     await tester.enterText(find.byKey(const Key('itemMaking')), '30');
     await tester.pump();
-    expect(find.text('4,551.45 د.إ'), findsOneWidget);
+    expect(find.text('4,550.84 د.إ'), findsOneWidget);
   });
 
   testWidgets('English toggle, zakat and about link', (tester) async {
@@ -41,7 +41,7 @@ void main() {
     await tester.enterText(find.byKey(const Key('priceField')), '461.11');
     await tester.tap(find.text('Zakat'));
     await tester.pumpAndSettle();
-    expect(find.text('1,008.68 AED'), findsOneWidget);
+    expect(find.text('1,008.53 AED'), findsOneWidget);
 
     await tester.tap(find.byKey(const Key('aboutButton')));
     await tester.pumpAndSettle();

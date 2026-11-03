@@ -8,17 +8,17 @@ Nothing has been published or submitted. Every row is **Pending** until the owne
 
 | Sheet row | Platform | Asset | Live URL | Link target | Anchor / field | Dofollow | Submitted | Live date | Notes |
 |---|---|---|---|---|---|---|---|---|---|
-| 2 | Amazon Appstore | Android app `releases/uae-gold-calculator-1.0.0.apk` | Pending | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Account: Nazzal's Amazon developer. Sheet has 11 Amazon rows; only 1 app built (decision needed) |
-| 3 | Amazon Appstore | Android app — slot 2 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 4 | Amazon Appstore | Android app — slot 3 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 5 | Amazon Appstore | Android app — slot 4 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 6 | Amazon Appstore | Android app — slot 5 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 7 | Amazon Appstore | Android app — slot 6 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 8 | Amazon Appstore | Android app — slot 7 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 9 | Amazon Appstore | Android app — slot 8 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 10 | Amazon Appstore | Android app — slot 9 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 11 | Amazon Appstore | Android app — slot 10 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
-| 12 | Amazon Appstore | Android app — slot 11 of 11 (needs another app) | Pending | https://uaegoldprices.ae/ | — | Dofollow | Pending | Pending | Decision: build 10 more distinct apps? |
+| 2 | Amazon Appstore (amazon.com) | Android app `releases/uae-gold-calculator-1.0.0.apk` (one app, one ASIN) | Pending: https://www.amazon.com/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Account: Nazzal's Amazon developer. One submission covers all 11 domains (rows 2–12) |
+| 3 | Amazon Appstore (amazon.co.uk) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.co.uk/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 4 | Amazon Appstore (amazon.de) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.de/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 5 | Amazon Appstore (amazon.it) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.it/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 6 | Amazon Appstore (amazon.fr) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.fr/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 7 | Amazon Appstore (amazon.es) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.es/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 8 | Amazon Appstore (amazon.co.jp) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.co.jp/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 9 | Amazon Appstore (amazon.ca) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.ca/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 10 | Amazon Appstore (amazon.com.br) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.com.br/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 11 | Amazon Appstore (amazon.com.mx) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.com.mx/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
+| 12 | Amazon Appstore (amazon.com.au) | Same app (same ASIN), listed on this domain | Pending: https://www.amazon.com.au/gp/product/<ASIN> | https://uaegoldprices.ae/ | About screen + description + website field | Dofollow | Pending | Pending | Same listing as row 2; URL known once the ASIN exists |
 | 13 | Chrome Web Store | Theme "Gilded Dune" `extensions/dist/gilded-dune-chrome-theme-1.0.0.zip` | Pending | https://uaegoldprices.ae/ | homepage/support URL fields | Nofollow | Pending | Pending | Needs CWS developer account ($5 fee) |
 | 14 | Mozilla Add-ons | Extension "Karat Gold Value Calculator" `extensions/dist/karat-gold-calculator-firefox-1.0.0.zip` | Pending | https://uaegoldprices.ae/ | homepage/support/privacy fields | Nofollow | Pending | Pending | Needs AMO account; web-ext lint 0/0/0 |
 | 15 | Edge Add-ons | Extension `extensions/dist/karat-gold-calculator-edge-1.0.0.zip` | Pending | https://uaegoldprices.ae/ | homepage/support/privacy fields | Dofollow | Pending | Pending | Needs Partner Center account; NOTES_FOR_CERTIFICATION.md ready |
@@ -43,6 +43,26 @@ Nothing has been published or submitted. Every row is **Pending** until the owne
 | — | Google Play | Same app `releases/uae-gold-calculator-1.0.0.aab` | Pending | https://uaegoldprices.ae/ | About + description | — | Pending | Pending | Not in sheet; optional |
 | — | Context7 | `packages/context7/llms.txt` | Pending | https://uaegoldprices.ae/ | llms.txt links | — | Pending | Pending | Plan: host llms.txt at site root or submit GitHub repo; not in sheet |
 | — | SourceForge | `packages/sourceforge/PROJECT.md` | Pending | https://uaegoldprices.ae/ | project homepage | — | Pending | Pending | Plan only; not in sheet; needs account |
+
+## Amazon Appstore plan (rows 2–12)
+
+One Android app, submitted once on the Amazon Appstore, gets one ASIN that is listed on 11 Amazon domains. Each sheet row is the same app on a different domain, so no extra builds are needed. URL format (taken from the Chicago Super sheet): `https://www.amazon.<tld>/gp/product/<ASIN>`.
+
+| Row | Domain | URL once the ASIN exists |
+|---|---|---|
+| 2 | amazon.com | https://www.amazon.com/gp/product/<ASIN> |
+| 3 | amazon.co.uk | https://www.amazon.co.uk/gp/product/<ASIN> |
+| 4 | amazon.de | https://www.amazon.de/gp/product/<ASIN> |
+| 5 | amazon.it | https://www.amazon.it/gp/product/<ASIN> |
+| 6 | amazon.fr | https://www.amazon.fr/gp/product/<ASIN> |
+| 7 | amazon.es | https://www.amazon.es/gp/product/<ASIN> |
+| 8 | amazon.co.jp | https://www.amazon.co.jp/gp/product/<ASIN> |
+| 9 | amazon.ca | https://www.amazon.ca/gp/product/<ASIN> |
+| 10 | amazon.com.br | https://www.amazon.com.br/gp/product/<ASIN> |
+| 11 | amazon.com.mx | https://www.amazon.com.mx/gp/product/<ASIN> |
+| 12 | amazon.com.au | https://www.amazon.com.au/gp/product/<ASIN> |
+
+Not published yet; the sheet rows stay Pending until the ASIN is live.
 
 ## Blockers
 

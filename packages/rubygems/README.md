@@ -2,7 +2,7 @@
 
 Gold value calculator for the UAE market. Give it today's 24K price per gram and it works out every karat, any weight unit, the making charge, 5% VAT and zakat, in Arabic or English. No network calls, no dependencies.
 
-- **Karat table**: 24K, 22K, 21K, 18K and 14K per gram, per tola and per troy ounce (purity = karat / 24; hallmarks 999 / 916 / 875 / 750 / 585 shown for reference).
+- **Karat table**: 24K, 22K, 21K, 18K and 14K per gram, per tola and per troy ounce using the fineness UAE price boards quote: 24K 999, 22K 914, 21K 874, 18K 749, 14K 583 (karat price = 24K price × fineness ÷ 999).
 - **Units**: gram, kilogram, troy ounce (31.1034768 g), tola (11.6638038 g) and mithqal (4.25 g). Arabic unit names such as `جرام`, `أونصة`, `تولة`, `مثقال` work too.
 - **Jewellery price**: metal value + making charge (AED per gram, percent of metal, or a fixed amount) + VAT on both, the way UAE shops bill it.
 - **Zakat**: adds up pure gold across items, compares it with the 85 g nisab and returns 2.5% of the value when due.
@@ -21,9 +21,9 @@ gem install uae-gold-calculator
 require "uae_gold_calculator"
 G = UaeGoldCalculator
 
-G.price_table(461.11)[2][:per_gram]                                  # => 403.47 (21K)
-G.item_price(price24: 461.11, weight: 10, karat: 21, making: 30)[:total] # => 4551.45
-G.zakat(461.11, [{ weight: 100, karat: 21 }])[:zakat]                # => 1008.68
+G.price_table(461.11)[2][:per_gram]                                  # => 403.41 (21K)
+G.item_price(price24: 461.11, weight: 10, karat: 21, making: 30)[:total] # => 4550.84
+G.zakat(461.11, [{ weight: 100, karat: 21 }])[:zakat]                # => 1008.53
 G.parse_number("٤٦١٫١١")                                             # => 461.11
 ```
 
@@ -33,22 +33,22 @@ G.parse_number("٤٦١٫١١")                                             # => 
 $ uae-gold-calculator table --price 461.11
 Karat	Per gram	Per tola	Per ounce
 24K (999)	461.11	5378.30	14342.12
-22K (916)	422.68	4930.11	13146.95
-21K (875)	403.47	4706.01	12549.36
-18K (750)	345.83	4033.72	10756.59
-14K (585)	268.98	3137.34	8366.24
+22K (914)	421.88	4920.68	13121.82
+21K (874)	403.41	4705.34	12547.56
+18K (749)	345.72	4032.38	10753.00
+14K (583)	269.10	3138.69	8369.83
 
 $ uae-gold-calculator item --price 461.11 --weight 10 --karat 21 --making 30 --lang ar
-قيمة الذهب: 4034.71 د.إ
+قيمة الذهب: 4034.14 د.إ
 المصنعية: 300.00 د.إ
-ضريبة القيمة المضافة (5%): 216.74 د.إ
-الإجمالي: 4551.45 د.إ
+ضريبة القيمة المضافة (5%): 216.71 د.إ
+الإجمالي: 4550.84 د.إ
 
 $ uae-gold-calculator convert 2 tola g
 23.3276
 
 $ uae-gold-calculator zakat --price 461.11 --weight 100 --karat 21
-Zakat due: 1008.68 AED
+Zakat due: 1008.53 AED
 ```
 
 Options for `item`: `--unit g|kg|oz|tola|mithqal`, `--karat`, `--making`, `--making-type per_gram|percent|fixed`, `--vat 0.05` (use `--vat 0` for investment bars, which are zero-rated in the UAE).
@@ -57,11 +57,11 @@ Options for `item`: `--unit g|kg|oz|tola|mithqal`, `--karat`, `--making`, `--mak
 
 | Step | Formula |
 |---|---|
-| Karat price per gram | `price24 × karat / 24` |
+| Karat price per gram | `price24 × fineness / 999` (24K 999, 22K 914, 21K 874, 18K 749, 16K 666, 14K 583; other karats `karat / 24`) |
 | Metal value | `grams × karat price` |
 | Making charge | `rate × grams`, or `metal × rate / 100`, or a fixed amount |
 | VAT | `(metal + making) × 5%` |
-| Zakat | `pure grams = Σ grams × karat / 24`; due when ≥ 85 g; `2.5% × pure grams × price24` |
+| Zakat | `24K-equivalent grams = Σ grams × purity`; due when ≥ 85 g; `2.5% × pure grams × price24` |
 
 Amounts are rounded half away from zero to 2 decimals on output only. Results are estimates: shop prices, VAT treatment of investment gold and zakat rulings vary, so check with your jeweller or scholar.
 
