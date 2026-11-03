@@ -16,6 +16,6 @@
 
 **Long description:** see `README.md`.
 
-**Dry-run:** `cargo test; cargo package --allow-dirty`: 5 unit tests + 1 doctest pass (3 Nov 2026, 14:55 PKT); `cargo package` result after first commit: CARGO_PACKAGE_RESULT.
+**Dry-run:** `cargo test; cargo package --allow-dirty`: 5 unit tests + 1 doctest pass (3 Nov 2026, 14:55 PKT); `cargo package` result after first commit: clean tree, 8 files, 18.4 KiB (7.2 KiB compressed), verify build OK (14:59 PKT).
 
 **Publish (not run, needs the owner's OK):** `cd packages/crates && cargo publish`
