@@ -1,0 +1,17 @@
+name: uae_gold_calculator
+description: Gold value calculator for the UAE. Karat prices per gram, tola and ounce, making charges, 5% VAT and zakat (85 g nisab). Arabic + English CLI.
+version: 1.0.0
+homepage: https://uaegoldprices.ae/
+repository: https://github.com/nbkdevs/uae-gold-prices
+issue_tracker: https://github.com/nbkdevs/uae-gold-prices/issues
+topics: [gold, calculator, finance, zakat, arabic]
+
+environment:
+  sdk: ^3.5.0
+
+executables:
+  uae_gold_calculator:
+
+dev_dependencies:
+  lints: ^5.0.0
+  test: ^1.25.0

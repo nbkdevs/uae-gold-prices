@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>حاسبة قيمة الذهب</title>
+<meta name="description" content="Free gold value calculator: 24/22/21/18/14K prices per gram, tola and ounce, jewellery price with making charge and 5% VAT, and zakat on gold. Arabic and English.">
+<link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+<header>
+  <div class="titles">
+    <h1 data-i18n="title">حاسبة قيمة الذهب</h1>
+    <p class="sub" data-i18n="sub">أسعار العيارات والمصنعية والضريبة والزكاة</p>
+  </div>
+  <button id="lang" type="button" data-i18n="toggle">English</button>
+</header>
+<main>
+  <section class="card">
+    <div class="row">
+      <div><label for="price" data-i18n="price">سعر الذهب عيار 24 اليوم</label>
+        <input id="price" inputmode="decimal" placeholder="461.11" autocomplete="off"></div>
+      <div><label for="basis" data-i18n="basis">السعر المُدخل لكل</label>
+        <select id="basis"><option value="g" data-i18n="perGramOpt">جرام</option><option value="oz" data-i18n="perOzOpt">أونصة</option></select></div>
+    </div>
+    <p class="note" data-i18n="priceHint">أدخل سعر اليوم بالدرهم. يُحفظ على جهازك فقط.</p>
+    <p class="err" id="err" role="alert"></p>
+  </section>
+  <nav class="tabs" role="tablist">
+    <button type="button" role="tab" data-tab="table" data-i18n="tTable">العيارات</button>
+    <button type="button" role="tab" data-tab="item" data-i18n="tItem">سعر القطعة</button>
+    <button type="button" role="tab" data-tab="zakat" data-i18n="tZakat">الزكاة</button>
+    <button type="button" role="tab" data-tab="conv" data-i18n="tConv">الوحدات</button>
+  </nav>
+  <section class="card panel" id="p-table" role="tabpanel">
+    <table><thead><tr><th data-i18n="karat">العيار</th><th data-i18n="perGram">الجرام</th><th data-i18n="perTola">التولة</th><th data-i18n="perOunce">الأونصة</th></tr></thead>
+      <tbody id="tableBody"></tbody></table>
+  </section>
+  <section class="card panel" id="p-item" role="tabpanel" hidden>
+    <div class="row row3">
+      <div><label for="weight" data-i18n="weight">الوزن</label><input id="weight" inputmode="decimal" placeholder="10"></div>
+      <div><label for="unit" data-i18n="unit">الوحدة</label><select id="unit"></select></div>
+      <div><label for="karat" data-i18n="karat">العيار</label><select id="karat"></select></div>
+    </div>
+    <div class="row">
+      <div><label for="making" data-i18n="making">المصنعية</label><input id="making" inputmode="decimal" placeholder="0"></div>
+      <div><label for="makingType" data-i18n="makingType">نوع المصنعية</label>
+        <select id="makingType"><option value="per_gram" data-i18n="mPerGram">درهم لكل جرام</option><option value="percent" data-i18n="mPercent">نسبة %</option><option value="fixed" data-i18n="mFixed">مبلغ ثابت</option></select></div>
+    </div>
+    <label class="check"><input type="checkbox" id="vatOn" checked> <span data-i18n="vatOn">إضافة ضريبة القيمة المضافة 5%</span></label>
+    <div class="out" id="itemOut"></div>
+  </section>
+  <section class="card panel" id="p-zakat" role="tabpanel" hidden>
+    <div class="items" id="zItems"></div>
+    <p><button class="btn" id="addItem" type="button" data-i18n="addItem">+ إضافة قطعة</button></p>
+    <div class="out" id="zakatOut"></div>
+  </section>
+  <section class="card panel" id="p-conv" role="tabpanel" hidden>
+    <div class="row row3">
+      <div><label for="cValue" data-i18n="value2">القيمة</label><input id="cValue" inputmode="decimal" value="1"></div>
+      <div><label for="cFrom" data-i18n="from">من</label><select id="cFrom"></select></div>
+      <div><label for="cTo" data-i18n="to">إلى</label><select id="cTo"></select></div>
+    </div>
+    <div class="out"><strong id="cOut"></strong></div>
+  </section>
+  <p class="note" data-i18n="note">النتائج تقديرية.</p>
+</main>
+<footer><span data-i18n="footer">أسعار الذهب المباشرة في الإمارات:</span> <a href="https://uaegoldprices.ae/">سعر الذهب اليوم في الامارات</a> · <a href="https://github.com/nbkdevs/uae-gold-prices">GitHub</a></footer>
+<script src="js/gold.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

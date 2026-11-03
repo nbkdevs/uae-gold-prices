@@ -1,0 +1,16 @@
+{
+  "name": "uae-gold-calculator",
+  "version": "1.0.0",
+  "description": "Gold value calculator for the UAE: 24/22/21/18/14K prices per gram, tola and ounce, making charges, 5% VAT and zakat. Arabic + English. Library + CLI, zero dependencies.",
+  "keywords": ["gold", "gold-price", "karat", "uae", "dubai", "aed", "zakat", "vat", "tola", "calculator", "arabic", "cli"],
+  "homepage": "https://uaegoldprices.ae/",
+  "bugs": { "url": "https://github.com/nbkdevs/uae-gold-prices/issues" },
+  "repository": { "type": "git", "url": "git+https://github.com/nbkdevs/uae-gold-prices.git", "directory": "packages/npm" },
+  "license": "MIT",
+  "author": "UAE Gold Prices (https://uaegoldprices.ae/)",
+  "main": "lib/index.js",
+  "bin": { "uae-gold-calculator": "bin/cli.js" },
+  "files": ["lib/", "bin/", "README.md", "LICENSE"],
+  "scripts": { "test": "node --test test/" },
+  "engines": { "node": ">=18" }
+}

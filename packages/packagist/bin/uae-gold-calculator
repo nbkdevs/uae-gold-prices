@@ -1,0 +1,54 @@
+#!/usr/bin/env php
+<?php
+
+declare(strict_types=1);
+
+foreach ([__DIR__ . '/../../../vendor/autoload.php', __DIR__ . '/../../../../../autoload.php'] as $f) {
+    if (is_file($f)) { require $f; break; }
+}
+if (!class_exists(\UaeGoldPrices\GoldCalculator\Gold::class)) { require __DIR__ . '/../src/Gold.php'; }
+
+use UaeGoldPrices\GoldCalculator\Gold;
+
+$pos = []; $opt = [];
+for ($i = 1; $i < $argc; $i++) {
+    if (str_starts_with($argv[$i], '--')) { $opt[substr($argv[$i], 2)] = $argv[++$i] ?? ''; } else { $pos[] = $argv[$i]; }
+}
+$ar = ($opt['lang'] ?? '') === 'ar';
+$cur = $ar ? 'د.إ' : 'AED';
+$n = function (string $k, ?float $d = null) use ($opt): float {
+    if (isset($opt[$k])) { return Gold::parseNumber($opt[$k]); }
+    if ($d === null) { throw new InvalidArgumentException("--$k is required"); }
+    return $d;
+};
+try {
+    switch ($pos[0] ?? '') {
+        case 'convert':
+            echo Gold::round(Gold::convert(Gold::parseNumber($pos[1] ?? ''), $pos[2] ?? 'g', $pos[3] ?? 'g'), 4), "\n";
+            break;
+        case 'table':
+            echo $ar ? "العيار\tسعر الجرام\tسعر التولة\tسعر الأونصة\n" : "Karat\tPer gram\tPer tola\tPer ounce\n";
+            foreach (Gold::priceTable($n('price')) as $r) {
+                printf("%dK (%d)\t%.2f\t%.2f\t%.2f\n", $r['karat'], $r['hallmark'], $r['perGram'], $r['perTola'], $r['perOunce']);
+            }
+            break;
+        case 'item':
+            $r = Gold::itemPrice($n('price'), $n('weight'), $opt['unit'] ?? 'g', $n('karat', 24), $n('making', 0),
+                $opt['making-type'] ?? 'per_gram', $n('vat', Gold::UAE_VAT_RATE));
+            printf("%s: %.2f %s\n", $ar ? 'قيمة الذهب' : 'Gold value', $r['metal'], $cur);
+            printf("%s: %.2f %s\n", $ar ? 'المصنعية' : 'Making charge', $r['making'], $cur);
+            printf("%s: %.2f %s\n", $ar ? 'ضريبة القيمة المضافة' : 'VAT', $r['vat'], $cur);
+            printf("%s: %.2f %s\n", $ar ? 'الإجمالي' : 'Total', $r['total'], $cur);
+            break;
+        case 'zakat':
+            $z = Gold::zakat($n('price'), [['weight' => $n('weight'), 'unit' => $opt['unit'] ?? 'g', 'karat' => $n('karat', 24)]]);
+            echo $z['due'] ? sprintf("%s: %.2f %s\n", $ar ? 'الزكاة المستحقة' : 'Zakat due', $z['zakat'], $cur)
+                : ($ar ? "أقل من النصاب: لا زكاة\n" : "Below nisab: no zakat due\n");
+            break;
+        default:
+            echo 'uae-gold-calculator ' . Gold::VERSION . ": table | item | convert | zakat. Today's 24K price: https://uaegoldprices.ae/\n";
+    }
+} catch (Throwable $e) {
+    fwrite(STDERR, 'Error: ' . $e->getMessage() . "\n");
+    exit(1);
+}

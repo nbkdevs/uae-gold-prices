@@ -1,0 +1,21 @@
+[package]
+name = "uae-gold-calculator"
+version = "1.0.0"
+edition = "2021"
+description = "Gold value calculator for the UAE: karat prices per gram/tola/ounce, making charges, 5% VAT and zakat (85 g nisab). Library + CLI, no dependencies."
+license = "MIT"
+authors = ["UAE Gold Prices"]
+homepage = "https://uaegoldprices.ae/"
+documentation = "https://docs.rs/uae-gold-calculator"
+repository = "https://github.com/nbkdevs/uae-gold-prices"
+readme = "README.md"
+keywords = ["gold", "karat", "uae", "zakat", "calculator"]
+categories = ["finance", "command-line-utilities"]
+include = ["src/**", "Cargo.toml", "README.md", "LICENSE"]
+
+[lib]
+name = "uae_gold_calculator"
+
+[[bin]]
+name = "uae-gold-calculator"
+path = "src/bin/cli.rs"

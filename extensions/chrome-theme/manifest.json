@@ -1,0 +1,118 @@
+{
+  "manifest_version": 3,
+  "name": "Gilded Dune",
+  "version": "1.0.0",
+  "description": "A warm gold theme: sunlit desert dunes at dusk, a bronze frame and a soft sand toolbar.",
+  "theme": {
+    "images": {
+      "theme_frame": "images/theme_frame.png",
+      "theme_toolbar": "images/theme_toolbar.png",
+      "theme_ntp_background": "images/theme_ntp_background.png",
+      "theme_tab_background": "images/theme_tab_background.png"
+    },
+    "colors": {
+      "frame": [
+        86,
+        58,
+        22
+      ],
+      "frame_inactive": [
+        110,
+        84,
+        50
+      ],
+      "toolbar": [
+        250,
+        238,
+        212
+      ],
+      "tab_text": [
+        58,
+        38,
+        14
+      ],
+      "tab_background_text": [
+        250,
+        232,
+        196
+      ],
+      "bookmark_text": [
+        74,
+        50,
+        20
+      ],
+      "ntp_background": [
+        64,
+        42,
+        30
+      ],
+      "ntp_text": [
+        255,
+        244,
+        222
+      ],
+      "ntp_link": [
+        255,
+        222,
+        150
+      ],
+      "ntp_header": [
+        86,
+        58,
+        22
+      ],
+      "ntp_section": [
+        250,
+        238,
+        212
+      ],
+      "button_background": [
+        184,
+        134,
+        11
+      ],
+      "toolbar_button_icon": [
+        120,
+        82,
+        20
+      ],
+      "omnibox_background": [
+        255,
+        250,
+        238
+      ],
+      "omnibox_text": [
+        58,
+        38,
+        14
+      ]
+    },
+    "tints": {
+      "buttons": [
+        0.11,
+        0.6,
+        0.35
+      ],
+      "frame": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "frame_inactive": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "background_tab": [
+        -1.0,
+        -1.0,
+        -1.0
+      ]
+    },
+    "properties": {
+      "ntp_background_alignment": "bottom",
+      "ntp_background_repeat": "no-repeat",
+      "ntp_logo_alternate": 1
+    }
+  }
+}

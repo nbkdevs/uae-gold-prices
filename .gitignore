@@ -1,0 +1,48 @@
+# OS / editors
+.DS_Store
+*.swp
+*.log
+.idea/
+*.iml
+
+# Signing secrets (never commit)
+key.properties
+*.jks
+*.keystore
+
+# Flutter app build output (app/ has its own .gitignore too)
+app/build/
+app/.dart_tool/
+app/android/app/debug
+app/android/app/profile
+app/android/app/release
+
+# Release binaries are attached to GitHub releases, not committed
+/releases/*.apk
+/releases/*.aab
+
+# Extension zips are rebuilt by extensions/package.py
+extensions/dist/
+
+# softrank packages: build output and local deps
+/vendor/
+/composer.lock
+.phpunit.cache/
+.phpunit.result.cache
+node_modules/
+packages/**/dist/
+packages/**/build/
+packages/**/target/
+packages/**/bin/Debug/
+packages/**/bin/Release/
+packages/**/obj/
+packages/**/*.egg-info/
+**/__pycache__/
+**/.pytest_cache/
+packages/**/.dart_tool/
+packages/pub/pubspec.lock
+packages/crates/Cargo.lock
+*.tgz
+*.gem
+*.nupkg
+*.snupkg

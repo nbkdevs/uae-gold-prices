@@ -1,0 +1,13 @@
+{
+  "name": "uae-gold-calculator-server",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Docker image: gold value API (karat prices, making charge, VAT, zakat) and an Arabic/English calculator page",
+  "homepage": "https://uaegoldprices.ae/",
+  "license": "MIT",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test test/"
+  }
+}

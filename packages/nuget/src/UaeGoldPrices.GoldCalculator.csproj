@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <RootNamespace>UaeGoldPrices.GoldCalculator</RootNamespace>
+    <PackageId>UaeGoldPrices.GoldCalculator</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>UAE Gold Prices</Authors>
+    <Company>UAE Gold Prices</Company>
+    <Description>Gold value calculator for the UAE: 24/22/21/18/14K prices per gram, tola and troy ounce, making charges, 5% VAT and zakat (85 g nisab). Accepts Arabic-Indic digits and Arabic unit names. No dependencies, no network.</Description>
+    <PackageTags>gold;gold-price;karat;uae;dubai;aed;zakat;vat;tola;calculator</PackageTags>
+    <PackageProjectUrl>https://uaegoldprices.ae/</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/nbkdevs/uae-gold-prices</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <NoWarn>$(NoWarn);CS1591</NoWarn>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Include="../README.md" Pack="true" PackagePath="/" />
+    <None Include="../LICENSE" Pack="true" PackagePath="/" />
+  </ItemGroup>
+</Project>

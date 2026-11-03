@@ -1,0 +1,48 @@
+#!/usr/bin/env ruby
+# frozen_string_literal: true
+
+require "uae_gold_calculator"
+
+G = UaeGoldCalculator
+pos = []
+opt = {}
+i = 0
+while i < ARGV.length
+  if ARGV[i].start_with?("--")
+    opt[ARGV[i][2..]] = ARGV[i + 1]
+    i += 2
+  else
+    pos << ARGV[i]
+    i += 1
+  end
+end
+ar = opt["lang"] == "ar"
+cur = ar ? "د.إ" : "AED"
+begin
+  case pos.first
+  when "convert"
+    puts G.round_money(G.convert(pos[1], pos[2], pos[3]), 4)
+  when "table"
+    puts(ar ? "العيار\tسعر الجرام\tسعر التولة\tسعر الأونصة" : "Karat\tPer gram\tPer tola\tPer ounce")
+    G.price_table(opt.fetch("price")).each do |r|
+      puts format("%dK (%d)\t%.2f\t%.2f\t%.2f", r[:karat], r[:hallmark], r[:per_gram], r[:per_tola], r[:per_ounce])
+    end
+  when "item"
+    r = G.item_price(price24: opt.fetch("price"), weight: opt.fetch("weight"), unit: opt.fetch("unit", "g"),
+                     karat: G.parse_number(opt.fetch("karat", "24")), making: opt.fetch("making", "0"),
+                     making_type: opt.fetch("making-type", "per_gram"), vat_rate: opt.fetch("vat", "0.05"))
+    puts format("%s: %.2f %s", ar ? "قيمة الذهب" : "Gold value", r[:metal], cur)
+    puts format("%s: %.2f %s", ar ? "المصنعية" : "Making charge", r[:making], cur)
+    puts format("%s: %.2f %s", ar ? "ضريبة القيمة المضافة" : "VAT", r[:vat], cur)
+    puts format("%s: %.2f %s", ar ? "الإجمالي" : "Total", r[:total], cur)
+  when "zakat"
+    z = G.zakat(opt.fetch("price"), [{ weight: opt.fetch("weight"), unit: opt.fetch("unit", "g"),
+                                        karat: G.parse_number(opt.fetch("karat", "24")) }])
+    puts(z[:due] ? format("%s: %.2f %s", ar ? "الزكاة المستحقة" : "Zakat due", z[:zakat], cur) : (ar ? "أقل من النصاب: لا زكاة" : "Below nisab: no zakat due"))
+  else
+    puts "uae-gold-calculator #{G::VERSION}: table | item | convert | zakat. Today's 24K price: https://uaegoldprices.ae/"
+  end
+rescue KeyError, ArgumentError => e
+  warn "Error: #{e.message}"
+  exit 1
+end

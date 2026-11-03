@@ -1,0 +1,51 @@
+:root {
+  --gold: #b8860b; --gold-2: #d4a72c; --gold-soft: #f7ecd0; --ink: #2b2113; --muted: #6f6145;
+  --bg: #fffaf0; --card: #ffffff; --line: #eadcb8; --ok: #2e7d32; --warn: #a15c00;
+  font-family: "Segoe UI", Tahoma, "Noto Naskh Arabic", "Noto Sans Arabic", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--ink); font-size: 15px; line-height: 1.5; }
+body.popup { width: 380px; min-height: 520px; font-size: 14px; }
+header { background: linear-gradient(135deg, #7a5300, var(--gold) 55%, var(--gold-2)); color: #fff; padding: 14px 16px; display: flex; align-items: center; gap: 10px; }
+header h1 { font-size: 1.15rem; margin: 0; flex: 1; }
+header .sub { font-size: .8rem; opacity: .9; margin: 2px 0 0; }
+#lang { background: rgba(255,255,255,.18); color: #fff; border: 1px solid rgba(255,255,255,.5); border-radius: 999px; padding: 4px 12px; cursor: pointer; font: inherit; font-size: .85rem; }
+main { max-width: 760px; margin: 0 auto; padding: 14px; }
+.card { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 14px; margin-bottom: 12px; box-shadow: 0 1px 3px rgba(122,83,0,.06); }
+label { display: block; font-size: .85rem; color: var(--muted); margin-bottom: 4px; }
+input, select { width: 100%; height: 40px; padding: 0 10px; border: 1px solid var(--line); border-radius: 10px; font: inherit; background: #fff; color: var(--ink); }
+input:focus, select:focus { outline: 2px solid var(--gold-2); border-color: var(--gold-2); }
+.row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 10px; }
+.row3 { grid-template-columns: 1fr 1fr 1fr; }
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; flex-wrap: wrap; }
+.tabs button { flex: 1; min-width: 80px; border: 1px solid var(--line); background: var(--card); color: var(--ink); border-radius: 10px; padding: 8px 6px; cursor: pointer; font: inherit; font-size: .9rem; }
+.tabs button[aria-selected="true"] { background: var(--gold); border-color: var(--gold); color: #fff; }
+.panel[hidden] { display: none; }
+table { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+th, td { padding: 8px 6px; border-bottom: 1px solid var(--line); text-align: start; }
+th { font-size: .8rem; color: var(--muted); font-weight: 600; }
+td.k { font-weight: 700; }
+td.k small { color: var(--muted); font-weight: 400; }
+.out { background: var(--gold-soft); border-radius: 12px; padding: 12px; }
+.out .line { display: flex; justify-content: space-between; padding: 3px 0; }
+.out .total { font-weight: 700; font-size: 1.1rem; border-top: 1px dashed var(--gold); margin-top: 6px; padding-top: 8px; }
+.badge { display: inline-block; border-radius: 999px; padding: 2px 10px; font-size: .8rem; font-weight: 600; }
+.badge.ok { background: #e3f3e4; color: var(--ok); }
+.badge.no { background: #fdf0dc; color: var(--warn); }
+.items .it { display: grid; grid-template-columns: 1fr 1fr minmax(96px,1.2fr) auto; gap: 6px; margin-bottom: 6px; align-items: end; }
+.btn { border: 1px solid var(--gold); color: var(--gold); background: #fff; border-radius: 10px; padding: 7px 12px; cursor: pointer; font: inherit; font-size: .85rem; }
+.btn.x { border-color: var(--line); color: var(--muted); padding: 7px 10px; }
+.check { display: flex; align-items: center; gap: 8px; color: var(--ink); font-size: .9rem; margin: 2px 0 10px; }
+.check input { width: auto; height: auto; }
+.err { color: #b3261e; font-size: .85rem; margin: 4px 0 0; }
+.err:empty { display: none; }
+.note { font-size: .78rem; color: var(--muted); }
+footer { text-align: center; font-size: .8rem; color: var(--muted); padding: 8px 14px 18px; }
+footer a { color: var(--gold); }
+@media (max-width: 420px) { .row3 { grid-template-columns: 1fr 1fr; } }
+@media (prefers-color-scheme: dark) {
+  :root { --bg: #17130c; --card: #221c12; --ink: #f4ead2; --muted: #c2b28c; --line: #3d3220; --gold-soft: #2e2615; }
+  input, select, .btn { background: #1b160e; color: var(--ink); }
+  .tabs button { color: var(--ink); }
+}
+header .titles { flex: 1; }

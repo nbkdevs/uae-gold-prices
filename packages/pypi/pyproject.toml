@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uae-gold-calculator"
+version = "1.0.0"
+description = "Gold value calculator for the UAE: 24/22/21/18/14K prices per gram, tola and ounce, making charges, 5% VAT and zakat (nisab 85 g). Arabic + English CLI, zero dependencies."
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "UAE Gold Prices" }]
+requires-python = ">=3.8"
+keywords = ["gold", "gold-price", "uae", "dubai", "karat", "aed", "zakat", "vat", "tola", "سعر الذهب"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: MIT License",
+  "Operating System :: OS Independent",
+  "Natural Language :: Arabic",
+  "Natural Language :: English",
+  "Topic :: Office/Business :: Financial",
+]
+
+[project.urls]
+Homepage = "https://uaegoldprices.ae/"
+Documentation = "https://uaegoldprices.ae/"
+Source = "https://github.com/nbkdevs/uae-gold-prices"
+Issues = "https://github.com/nbkdevs/uae-gold-prices/issues"
+
+[project.scripts]
+uae-gold-calculator = "uae_gold_calculator.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

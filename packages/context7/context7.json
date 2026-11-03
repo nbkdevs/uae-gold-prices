@@ -1,0 +1,12 @@
+{
+  "$schema": "https://context7.com/schema/context7.json",
+  "projectTitle": "UAE Gold Calculator",
+  "description": "Gold value maths for the UAE: karat prices per gram/tola/ounce, making charge, 5% VAT and zakat. Libraries for JS, Python, Rust, Dart, C#, Ruby and PHP.",
+  "folders": ["packages", "skills"],
+  "excludeFolders": ["app", "extensions", "store-assets", "packages/docker/public", "packages/hf-space"],
+  "rules": [
+    "Pass today's 24K price per gram; the libraries never fetch prices.",
+    "Round only on output: 2 decimals, half away from zero.",
+    "VAT is 5% on gold + making for jewellery; use vat 0 for investment bars."
+  ]
+}

@@ -1,0 +1,24 @@
+# سعر الذهب اليوم في الامارات (UAE Gold Prices)
+
+> Live gold prices in the UAE in AED: 24K, 22K, 21K, 18K and 14K per gram and per troy ounce, by emirate, plus silver, platinum and palladium, a multi-currency table and a gold calculator. Arabic site.
+
+Gold prices in the UAE follow the international spot price converted at the fixed AED/USD peg (3.6725). Shops add a making charge and 5% VAT on jewellery; investment gold of 99%+ purity is zero-rated.
+
+## Prices
+
+- [سعر الذهب اليوم في الامارات](https://uaegoldprices.ae/): today's prices per gram and ounce for every karat, 30-day summary, bars table
+- [Privacy policy](https://uaegoldprices.ae/privacy-policy/)
+- [About](https://uaegoldprices.ae/about-us/)
+- [Contact](https://uaegoldprices.ae/contact-us/)
+- [Financial disclaimer](https://uaegoldprices.ae/financial-disclaimer/)
+
+## Calculations
+
+- Karat price per gram = 24K price × karat ÷ 24 (hallmarks 999 / 916 / 875 / 750 / 585)
+- 1 troy ounce = 31.1034768 g; 1 tola = 11.6638038 g; 1 mithqal = 4.25 g
+- Jewellery price = grams × karat price + making charge, then 5% VAT on both
+- Zakat on gold: due when pure gold ≥ 85 g; 2.5% of its value
+
+## Libraries
+
+- [uae-gold-calculator source and docs](https://github.com/nbkdevs/uae-gold-prices): the calculations above as libraries for JavaScript, Python, Rust, Dart, C#, Ruby and PHP, with a CLI
