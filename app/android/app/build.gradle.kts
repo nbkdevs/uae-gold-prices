@@ -14,7 +14,7 @@ if (keystorePropertiesFile.exists()) {
 }
 
 android {
-    namespace = "com.uaegoldprices.uae_gold_calculator"
+    namespace = "com.nbkdevs.karatgoldcalc"
     compileSdk = flutter.compileSdkVersion
     ndkVersion = flutter.ndkVersion
 
@@ -26,7 +26,7 @@ android {
     packaging { jniLibs { excludes += listOf("lib/x86_64/**", "lib/x86/**") } }
 
     defaultConfig {
-        applicationId = "com.uaegoldprices.uae_gold_calculator"
+        applicationId = "com.nbkdevs.karatgoldcalc"
         // You can update the following values to match your application needs.
         // For more information, see: https://flutter.dev/to/review-gradle-config.
         minSdk = flutter.minSdkVersion
@@ -45,6 +45,8 @@ android {
                 keyAlias = keystoreProperties["keyAlias"] as String
                 keyPassword = keystoreProperties["keyPassword"] as String
                 storeFile = file(keystoreProperties["storeFile"] as String)
+                enableV1Signing = true
+                enableV2Signing = true
                 storePassword = keystoreProperties["storePassword"] as String
             }
         }

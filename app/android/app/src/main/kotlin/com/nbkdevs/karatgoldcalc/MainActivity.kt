@@ -1,4 +1,4 @@
-package com.uaegoldprices.uae_gold_calculator
+package com.nbkdevs.karatgoldcalc
 
 import io.flutter.embedding.android.FlutterActivity
 
