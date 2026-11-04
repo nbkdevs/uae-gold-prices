@@ -6,7 +6,7 @@
 const KARATS = Object.freeze([24, 22, 21, 18, 14]);
 
 /**
- * Fineness per mille used by UAE gold price boards:
+ * Fineness per mille used by local gold price boards:
  * 24K 999, 22K 914, 21K 874, 18K 750 -> 749, 16K 666, 14K 583.
  * A karat's price = 24K price x fineness / 999. Other karats fall back to karat / 24.
  */
@@ -29,8 +29,8 @@ const UNIT_ALIASES = Object.freeze({
   mithqals: 'mithqal', misqal: 'mithqal', 'مثقال': 'mithqal',
 });
 
-/** UAE standard VAT rate. */
-const UAE_VAT_RATE = 0.05;
+/** Standard VAT rate (5%). */
+const VAT_RATE = 0.05;
 /** Zakat nisab for gold in grams of pure (24K) gold, and the zakat rate. */
 const NISAB_GRAMS = 85;
 const ZAKAT_RATE = 0.025;
@@ -135,7 +135,7 @@ function itemPrice(o) {
   else if (type === 'percent') making = (metal * makingAmount) / 100;
   else if (type === 'fixed') making = makingAmount;
   else throw new RangeError(`makingType must be per_gram, percent or fixed`);
-  const vatRate = o.vatRate === undefined ? UAE_VAT_RATE : parseNumber(o.vatRate);
+  const vatRate = o.vatRate === undefined ? VAT_RATE : parseNumber(o.vatRate);
   checkPositive('vatRate', vatRate, true);
   const subtotal = metal + making;
   const vat = subtotal * vatRate;
@@ -192,7 +192,7 @@ const LABELS = Object.freeze({
 });
 
 root.GoldCalc = Object.freeze({
-  KARATS, HALLMARKS, UNITS, UAE_VAT_RATE, NISAB_GRAMS, ZAKAT_RATE, LABELS,
+  KARATS, HALLMARKS, UNITS, VAT_RATE, NISAB_GRAMS, ZAKAT_RATE, LABELS,
   round, parseNumber, normalizeUnit, purity, convert, karatPrice, priceTable, itemPrice, zakat,
 });
 })(typeof self !== 'undefined' ? self : this);

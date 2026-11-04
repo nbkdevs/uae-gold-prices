@@ -19,7 +19,6 @@
       cur: 'د.إ', gUnit: 'جم',
       needPrice: 'أدخل سعر جرام الذهب عيار 24 أولاً.',
       note: 'النتائج تقديرية. تختلف أسعار المحلات وأحكام الضريبة على ذهب الاستثمار وآراء الفقهاء في الزكاة.',
-      footer: 'أسعار الذهب المباشرة في الإمارات:'
     },
     en: {
       title: 'Gold Value Calculator', sub: 'Karat prices, making charge, VAT and zakat', toggle: 'العربية',
@@ -37,7 +36,6 @@
       cur: 'AED', gUnit: 'g',
       needPrice: 'Enter the 24K price per gram first.',
       note: 'Estimates only. Shop prices, VAT on investment gold and zakat rulings vary.',
-      footer: 'Live UAE gold rates:'
     }
   };
   var store = {
@@ -90,7 +88,7 @@
     var out = $('itemOut'); out.textContent = '';
     if (!(p > 0) || !(num('weight') > 0)) return;
     var r = G.itemPrice({ price24: p, weight: num('weight'), unit: $('unit').value, karat: Number($('karat').value),
-      making: isNaN(num('making')) ? 0 : num('making'), makingType: $('makingType').value, vatRate: $('vatOn').checked ? G.UAE_VAT_RATE : 0 });
+      making: isNaN(num('making')) ? 0 : num('making'), makingType: $('makingType').value, vatRate: $('vatOn').checked ? G.VAT_RATE : 0 });
     var L = T[lang];
     line(out, L.metal + ' (' + fmt(r.grams) + ' ' + L.gUnit + ' × ' + fmt(r.pricePerGram) + ')', money(r.metal));
     line(out, L.makingOut, money(r.making));

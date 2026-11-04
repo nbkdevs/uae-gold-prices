@@ -9,7 +9,7 @@ The site goes ONLY in the URL fields below. (The Android app copy lives in `app/
 |---|---|---|---|
 | Homepage / website | https://uaegoldprices.ae/ | https://uaegoldprices.ae/ | https://uaegoldprices.ae/ |
 | Support | https://uaegoldprices.ae/contact-us/ | https://uaegoldprices.ae/contact-us/ | https://uaegoldprices.ae/contact-us/ |
-| Privacy policy | https://uaegoldprices.ae/privacy-policy/ | https://uaegoldprices.ae/privacy-policy/ | https://uaegoldprices.ae/privacy-policy/ |
+| Privacy policy | (leave blank) | https://uaegoldprices.ae/privacy-policy/ | (leave blank) |
 
 All three pages were checked on 3 Nov 2026 and return 200 (`/contact/` redirects to `/contact-us/`).
 

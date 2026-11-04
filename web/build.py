@@ -55,8 +55,14 @@ def main() -> None:
             # Store packages carry no site link: drop the library's header comment.
             js = gold_js()
             js = re.sub(r"/\*\*\n \* uae-gold-calculator:.*?\*/\n", "", js, count=1, flags=re.S)
-            assert "uaegoldprices" not in js
+            js = js.replace("UAE_VAT_RATE", "VAT_RATE").replace("used by UAE gold price boards", "used by local gold price boards")
+            js = js.replace("/** UAE standard VAT rate. */", "/** Standard VAT rate (5%). */")
+            app = (dest / "js/app.js").read_text(encoding="utf-8").replace("G.UAE_VAT_RATE", "G.VAT_RATE")
+            app = re.sub(r"\n\s*footer: '[^']*',?", "", app)  # popup has no footer
+            for name_ in (js, app):
+                assert not re.search(r"uaegoldprices|UAE|Emirates|Dubai|الإمارات|الامارات|دبي", name_), "place/brand name in store package"
             (dest / "js/gold.js").write_text(js, encoding="utf-8")
+            (dest / "js/app.js").write_text(app, encoding="utf-8")
         (dest / name).write_text(page(popup=name == "popup.html"), encoding="utf-8")
         print(f"built {dest.relative_to(ROOT)}/{name}")
 
