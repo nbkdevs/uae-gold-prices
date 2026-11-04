@@ -71,3 +71,20 @@ Not published yet; the sheet rows stay Pending until the ASIN is live.
 - npm.io (row 33): page loads but shows no site link yet.
 - Amazon Appstore, Google Play, AMO, Edge Partner Center, Chrome Web Store, Product Hunt, Indie Hackers, GitLab, Design Nominees and SourceForge all need Nazzal's accounts (not approved yet).
 - Context7: `llms.txt` should be uploaded to the site root (https://uaegoldprices.ae/llms.txt).
+
+## Auto-created mirror pages (checked 4 Nov 2026, sheet rows 32–41, all Live)
+
+| Row | Website | Item URL | Link Type |
+|---|---|---|---|
+| 32 | Libraries io | https://libraries.io/pypi/uae-gold-calculator | Nofollow |
+| 33 | Libraries io | https://libraries.io/cargo/uae-gold-calculator | Nofollow |
+| 34 | Libraries io | https://libraries.io/npm/uae-gold-calculator | Nofollow |
+| 35 | Libraries io | https://libraries.io/pub/uae_gold_calculator | Nofollow |
+| 36 | Libraries io | https://libraries.io/nuget/UaeGoldPrices.GoldCalculator | Nofollow |
+| 37 | Libraries io | https://libraries.io/rubygems/uae-gold-calculator | Nofollow |
+| 38 | Libraries io | https://libraries.io/packagist/uaegoldprices%2Fgold-calculator | Nofollow |
+| 39 | PyPI Stats | https://pypistats.org/packages/uae-gold-calculator | Dofollow |
+| 40 | Docs rs | https://docs.rs/crate/uae-gold-calculator/latest | Dofollow |
+| 41 | Docs rs | https://docs.rs/uae-gold-calculator/latest/uae_gold_calculator/index.html | Dofollow |
+
+npm.io (row 31) still shows no site link; piwheels has no link; lib.rs returned 403 and rubydoc.info returned 520 (not added).
