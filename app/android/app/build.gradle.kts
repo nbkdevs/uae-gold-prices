@@ -23,6 +23,8 @@ android {
         targetCompatibility = JavaVersion.VERSION_17
     }
 
+    packaging { jniLibs { excludes += listOf("lib/x86_64/**", "lib/x86/**") } }
+
     defaultConfig {
         applicationId = "com.uaegoldprices.uae_gold_calculator"
         // You can update the following values to match your application needs.
