@@ -88,3 +88,9 @@ Not published yet; the sheet rows stay Pending until the ASIN is live.
 | 41 | Docs rs | https://docs.rs/uae-gold-calculator/latest/uae_gold_calculator/index.html | Dofollow |
 
 npm.io (row 31) still shows no site link; piwheels has no link; lib.rs returned 403 and rubydoc.info returned 520 (not added).
+
+## One link per domain (4 Nov 2026, PKT)
+
+Nazzal's rule: only ONE row per domain in each sheet/tab. Duplicate auto-created rows were deleted from the tracking sheet (row numbers in the link-check list above are now stale). Kept: Dofollow > Live > libraries.io PyPI page > docs.rs /latest/<crate>/index.html.
+
+Sheet1 already had one row per domain when checked (libraries.io packagist page, pypistats, docs.rs /crate/ form, socket.dev): nothing removed. The mirror-page table above (rows 32–41) is out of date; the sheet now holds only one Libraries io and one Docs rs row.
