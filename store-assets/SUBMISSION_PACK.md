@@ -94,8 +94,6 @@ Gram, kilogram, troy ounce, tola and mithqal, with the value at your price.
 Private
 No account, no ads, no tracking, and no permissions. Your last price and language stay on your device.
 
-For live gold rates see our site, سعر الذهب اليوم في الامارات: https://uaegoldprices.ae/
-
 Results are estimates. Shop prices, making charges and VAT treatment vary; ask a scholar for zakat rulings.
 
 ### Feature bullets
@@ -132,8 +130,6 @@ Results are estimates. Shop prices, making charges and VAT treatment vary; ask a
 
 خصوصية تامة
 بلا حساب ولا إعلانات ولا تتبع، ولا يطلب التطبيق أي أذونات. يُحفظ آخر سعر واللغة على جهازك فقط.
-
-للاطلاع على سعر الذهب اليوم في الامارات لحظة بلحظة زر موقعنا: https://uaegoldprices.ae/
 
 النتائج تقديرية؛ تختلف أسعار المحلات والمصنعية والضريبة، ويُرجع إلى أهل العلم في أحكام الزكاة.
 
